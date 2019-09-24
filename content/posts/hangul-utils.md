@@ -45,7 +45,7 @@ I took a look at how it was done in the Python library, under the function
 but found the logic difficult to follow and translate to Clojure. After some
 thought, the following is my stab at a more idiomatic, Clojurian approach.
 
-```clojure
+```lisp
 (defn syllabize
   "Takes a string of Korean alphabets, and reconstructs Korean text. The initial
   value for the reduce fn is a vector containing the accumulated result, the

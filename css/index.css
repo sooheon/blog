@@ -175,6 +175,11 @@ pre {
 .postlist-item-active .postlist-link {
   font-weight: bold;
 }
+.tmpl-post,
+.tmpl-home {
+  max-width: 900px;
+  margin: auto
+}
 .tmpl-home .postlist-link {
   font-size: 1em; /* 19px /16 */
   font-weight: 700;

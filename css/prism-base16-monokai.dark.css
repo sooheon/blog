@@ -35,7 +35,7 @@ pre[class*="language-"] {
 	color: #f8f8f2;
 }
 .token.string {
-	color: #a1efe4;
+	color: #659f93;
 }
 .token.entity, .token.url, .language-css .token.string, .style .token.string {
 	color: #a1efe4;

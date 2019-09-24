@@ -16,6 +16,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  font-size: 0.98rem;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -65,7 +66,7 @@ code {
   line-height: 1.5;
 }
 pre {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.375;
   direction: ltr;
   text-align: left;
@@ -175,7 +176,7 @@ pre {
   font-weight: bold;
 }
 .tmpl-home .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
+  font-size: 1em; /* 19px /16 */
   font-weight: 700;
 }
 

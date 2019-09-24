@@ -2,7 +2,7 @@
 title: Machine Natural Language Models pt. 1
 date: 2017-09-04
 tags:
-  - Natural Language Processing
+  - NLP
   - Korean
 layout: layouts/post.njk
 ---

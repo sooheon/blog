@@ -4,6 +4,7 @@ tags:
   - Clojure
   - Datomic
   - AWS
+date: 2019-09-25
 layout: layouts/post.njk
 ---
 

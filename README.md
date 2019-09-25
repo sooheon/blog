@@ -1,41 +1,15 @@
-# eleventy-base-blog
+# Personal blog built with 11ty
 
-A starter repository showing how to build a blog with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30c332cb-56d7-4f40-8adc-6fe3ec87f58b/deploy-status)](https://app.netlify.com/sites/affectionate-swartz-14d92a/deploys)
 
-[![Build Status](https://travis-ci.org/11ty/eleventy-base-blog.svg?branch=master)](https://travis-ci.org/11ty/eleventy-base-blog)
+## Dev
 
-## Demos
-
-* [Netlify](https://eleventy-base-blog.netlify.com/)
-* [Get your own Eleventy web site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)—seriously, just click OK a few times and it’s live—Netlify is amazing.
-* [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
-
-## Getting Started
-
-### 1. Clone this repository:
-
-```
-git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
-```
-
-
-### 2. Navigate to the directory
-
-```
-cd my-blog-name
-```
-
-Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
-
-### 3. Install dependencies
-
+### Install deps
 ```
 npm install
 ```
-
-### 4. Edit _data/metadata.json
-
-### 5. Run Eleventy
+### Edit _data/metadata.json
+### Run Eleventy
 
 ```
 npx eleventy

@@ -39,8 +39,7 @@ integration is as follows:
 
 ## Launching Emacs from iTerm
 
-First to launch GUI Emacs from terminal, I am using the following script from
-https://gist.github.com/4043945:
+First to launch GUI Emacs from terminal, I am using the following script:
 
 ```bash
 #!/bin/bash

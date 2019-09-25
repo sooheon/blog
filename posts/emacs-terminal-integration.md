@@ -115,7 +115,7 @@ and I have everything I need for seamless integration.
 
 ## The Result
 
-<img src="/images/content/emacs-iterm-workflow.png" alt="My Emacs-iTerm workflow">
+<img src="/img/posts/emacs-iterm-workflow.png" alt="My Emacs-iTerm workflow">
 
 The biggest reason that all of this works for me is that this acknowledges that
 the ⌘ key exists on my Mac. I was never happy with rebinding it to `Meta` in

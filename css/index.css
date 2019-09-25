@@ -177,7 +177,7 @@ pre {
 }
 .tmpl-post,
 .tmpl-home {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto
 }
 .tmpl-home .postlist-link {

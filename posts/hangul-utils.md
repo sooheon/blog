@@ -7,7 +7,7 @@ tags:
 layout: layouts/post.njk
 ---
 
-While looking at Peter Norvig's [spelling corrector](http://norvig.com/spell-correct.html) and attempting to adapt it for Korean text, I found that the agglutinative (from Latin, *to glue together*) nature of written Hangul posed some problems. Specifically the combination of the alphabet into syllable blocks, or *jamo*. In English, the alphabet characters which you type appear on screen, unchanged, in that order. In Korean, one types in the letters "ㄱ", "ㅏ", "ㄴ", and the combined character "간", with its own unicode character, is formed. Thus to check the spelling of Korean words, I needed some way to translate between the list-of-inputs representation and the agglutinated representation.
+While looking at Peter Norvig's [spelling corrector](http://norvig.com/spell-correct.html) and attempting to adapt it for Korean text, I found that the agglutinative (from Latin, *to glue together*) nature of written Hangul posed some problems. Specifically the combination of the alphabet into syllable blocks. In English, the alphabet characters which you type appear on screen, unchanged, in that order. In Korean, one types in the letters "ㄱ", "ㅏ", "ㄴ", and the combined character "간", with its own unicode character, is formed. Thus to check the spelling of Korean words, I needed some way to translate between the list-of-inputs representation and the agglutinated representation.
 
 I found a Python [library](https://github.com/kaniblu/hangul-utils) written for this purpose, but it wasn't quite what I needed, so I took this opportunity to write my first public Clojure [library](https://github.com/sooheon/hangul-utils).
 

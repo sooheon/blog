@@ -43,3 +43,7 @@ DEBUG=* npx eleventy
   * `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
   * `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
 * `_includes/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
+
+## Building the resume
+
+Inside `resume/` run `npm run public`, and copy the index.html in the public directory to 

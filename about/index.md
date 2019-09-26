@@ -10,8 +10,10 @@ templateClass: tmpl-post
 This blog is a place for posts about Clojure, machine learning,
 development tools yak-shaving, and some armchair philosophy.
 
-It's written by me, Sooheon Kim. I go by <code>sooheon</code> on
-Hacker News and [Github].  You can contact me at sooheon at gmail dot
-com.
+- [Github]
+- [Resume]
+- [HN]
 
+[HN]: https://news.ycombinator.com/user?id=sooheon
 [Github]: https://github.com/sooheon
+[Resume]: resume/

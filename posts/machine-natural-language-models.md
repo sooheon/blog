@@ -1,5 +1,5 @@
 ---
-title: Machine Natural Language Models pt. 1
+title: Natural Language Models pt. 1
 date: 2017-09-04
 tags:
   - NLP
@@ -42,15 +42,15 @@ semantic relations (this information comes at a cost, a large increase
 in the number of space-delimited tokens in the language -- this makes
 good tokenizers much more critical).
 
-What you get in return is a simplified, compressed representation of
-the text which can still answer one question: "what is this text
+So a BOW reporesentation is a simplified, compressed form of the text
+which can still answer one question decently: "what is this text
 about?"
 
 Whether the word "baseball" is the subject or the object of a
 sentence, its mere presence says something about the topic of that
 document. If your goal is not full semantic understanding of the text,
-but a high-level classification, a bag-of-words approach is not a
-terrible tradeoff.
+but a high-level classification, a bag-of-words approach is a fine
+tradeoff.
 
 ## Bag of Words as a Document Vector
 

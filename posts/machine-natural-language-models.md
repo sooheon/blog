@@ -112,7 +112,8 @@ Another less obvious limitation is that there is no way to encode
 similarities or relationships among the words in this vector. To
 humans, the words "Paris" and "Parisienne" have some semantic and
 syntactic relation. In a BOW model, the two words are exactly as
-orthogonal as any other pair of words.
+orthogonal as any other pair of words. Similarity between documents is
+limited to actually sharing the same word tokens.
 
 ```text
 "Paris"      => [1 0 0 0 ...]

@@ -1,26 +1,46 @@
 ---
-title: Hangul-utils, a Clojure Tool for Deconstructing Korean Syllables 
+title: Hangul-utils, a Clojure tool for Korean Text
 date: 2017-05-15
 tags:
   - Clojure
   - Korean
 ---
 
-While looking at Peter Norvig's [spelling corrector](http://norvig.com/spell-correct.html) and attempting to adapt it for Korean text, I found that the agglutinative (from Latin, *to glue together*) nature of written Hangul posed some problems. Specifically the combination of the alphabet into syllable blocks. In English, the alphabet characters which you type appear on screen, unchanged, in that order. In Korean, one types in the letters "ㄱ", "ㅏ", "ㄴ", and the combined character "간", with its own unicode character, is formed. Thus to check the spelling of Korean words, I needed some way to translate between the list-of-inputs representation and the agglutinated representation.
+While looking at Peter Norvig's [spelling
+corrector](http://norvig.com/spell-correct.html) and attempting to
+adapt it for Korean text, I found that the agglutinative (from Latin,
+*to glue together*) nature of written Hangul posed some
+problems. Specifically the combination of the alphabet into syllable
+blocks. In English, the alphabet characters which you type appear on
+screen, unchanged, in that order. In Korean, one types in the letters
+"ㄱ", "ㅏ", "ㄴ", and the combined character "간", with its own
+unicode character, is formed. Thus to check the spelling of Korean
+words, I needed some way to translate between the list-of-inputs
+representation and the agglutinated representation.
 
-I found a Python [library](https://github.com/kaniblu/hangul-utils) written for this purpose, but it wasn't quite what I needed, so I took this opportunity to write my first public Clojure [library](https://github.com/sooheon/hangul-utils).
+I found a Python [library](https://github.com/kaniblu/hangul-utils)
+written for this purpose, but it wasn't quite what I needed, so I took
+this opportunity to write my first public Clojure
+[library](https://github.com/sooheon/hangul-utils).
 
 ## How it works
-Korean syllables in unicode follow a simple [formula](https://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_in_Unicode) based on the code points of constuent *jamo* (letters).
+Korean syllables in unicode follow a simple
+[formula](https://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_in_Unicode)
+based on the code points of constuent *jamo* (letters).
 
-Rather than immediately outputting a transformed string (say from "안녕하세요" to "ㅇㅏㄴㄴㅕㅇㅎㅏㅅㅔㅇㅛ"), the library represents the deconstructed text as a vector of vectors of jamo first.
+Rather than immediately outputting a transformed string (say from
+"안녕하세요" to "ㅇㅏㄴㄴㅕㅇㅎㅏㅅㅔㅇㅛ"), the library represents
+the deconstructed text as a vector of vectors of jamo first.
 
 ```clojure
 (deconstruct-str "안녕하세요")
 ;; => [[\ㅇ \ㅏ \ㄴ] [\ㄴ \ㅕ \ㅇ] [\ㅎ \ㅏ] [\ㅅ \ㅔ] [\ㅇ \ㅛ]]
 ```
 
-This makes it simple to do operations such as take the initial consonants (초성, a common way of abbreviating Korean) or medial vowels of each word, and getting the full string is of course still easy:
+This makes it simple to do operations such as take the initial
+consonants (초성, a common way of abbreviating Korean) or medial
+vowels of each word, and getting the full string is of course still
+easy:
 
 ```clojure
 (str/join (map first (deconstruct-str "안녕하세요")))
@@ -37,12 +57,22 @@ This makes it simple to do operations such as take the initial consonants (초�
 ;; => "ㅇㅏㄴㄴㅕㅇㅎㅏㅅㅔㅇㅛ"
 ```
 
-Reconstructing the syllables from a string of morphemes is a bit trickier.  Hangul consonants can both start and end a syllable ("각" for example begins and ends with "ㄱ"), so you can't tell whether a given consonant is the start of a new syllable or the end of the last one without some context. If you kept the vector of vectors representation, this is simple because the inner vectors delineate syllables. If you are going from a flat string of morphemes like "ㅇㅏㅍ ㅈㅣㅂ ㅍㅏㅌㅈㅜㄱㅇㅡㄴ ㅂㅜㄺㅇㅡㄴ ㅍㅏㅌ.", you need to do a bit of backtracking for context.
+Reconstructing the syllables from a string of morphemes is a bit
+trickier.  Hangul consonants can both start and end a syllable ("각"
+for example begins and ends with "ㄱ"), so you can't tell whether a
+given consonant is the start of a new syllable or the end of the last
+one without some context. If you kept the vector of vectors
+representation, this is simple because the inner vectors delineate
+syllables. If you are going from a flat string of morphemes like
+"ㅇㅏㅍ ㅈㅣㅂ ㅍㅏㅌㅈㅜㄱㅇㅡㄴ ㅂㅜㄺㅇㅡㄴ ㅍㅏㅌ.", you need to
+do a bit of backtracking for context.
 
-I took a look at how it was done in the Python library, under the function
+I took a look at how it was done in the Python library, under the
+function
 [`join_jamos`](https://github.com/kaniblu/hangul-utils/blob/2c2bf5cffc94e88aad1ceec4bbc726ba00046a52/hangul_utils/jamo.py#L144),
-but found the logic difficult to follow and translate to Clojure. After some
-thought, the following is my stab at a more idiomatic, Clojurian approach.
+but found the logic difficult to follow and translate to
+Clojure. After some thought, the following is my stab at a more
+idiomatic, Clojurian approach.
 
 ```lisp
 (defn syllabize
@@ -85,4 +115,3 @@ the additional `let` form destructuring the same bindings again--redundant and
 inelegant, but it works. If anyone know a better way to approach this kind of
 problem, or any obvious improvements to make for reasonability/robustness,
 feedback would be much appreciated.
-

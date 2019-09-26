@@ -28,11 +28,11 @@ First, one loses word order, and therefore *most* grammar. Most, not
 all, because some languages assign semantic roles in the word forms
 themselves:
 
-- Semantic role assignment by word order:
+Semantic role assignment by word order:
   - "The dog booped the cat on the blanket"
   - "The cat booped the blanket on the dog"
 
-- Semantic role assignment by word forms (agglutinated suffixes):
+Semantic role assignment by word forms (agglutinated suffixes):
   - "고양이**는** 마당**에서** 강아지**를** 쫓았다"
   - "마당**에서** 고양이**는** 쫓았다, 강아지**를**"
 
@@ -135,9 +135,8 @@ to map a complex, human-friendly piece of information (such as a
 string representing a word) to the machine-friendly form of a
 fixed-length vector.
 
-Next, we will explore the breakthrough of word level embeddings, and
-how this is now being extrapolated to character-level and
-morpheme-level embeddings.
+Next, we will explore the breakthrough of word level embeddings, and how this
+is now being extrapolated to character-level and morpheme-level embeddings.
 
 <!-- # The Elegance of Word Embeddings -->
 

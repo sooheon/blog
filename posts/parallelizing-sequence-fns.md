@@ -5,7 +5,6 @@ tags:
   - Datomic
   - AWS
 date: 2019-09-25
-layout: layouts/post.njk
 ---
 
 Recently I built a system that periodically hit a lot of web APIs,
@@ -19,7 +18,7 @@ production, when I set up the pipeline as a lambda (with Datomic
 [Ions]) to be triggered with AWS CloudWatch events. Whatever ran in a
 lambda ion could not take too long to complete.
 
-```
+```text
 [scheduled CW event] -> [task lambda ion] -> [a ton of I/O bound processes]
                                 ^                           V
                                  \--timeout before return--/

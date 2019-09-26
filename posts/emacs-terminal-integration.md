@@ -4,7 +4,6 @@ date: 2017-02-15
 tags:
  - emacs
  - tools
-layout: layouts/post.njk
 ---
 
 The rationale for using graphical Emacs and iTerm together is as follows:

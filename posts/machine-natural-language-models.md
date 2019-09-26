@@ -32,15 +32,15 @@ Semantic role assignment by word order:
   - "The dog booped the cat on the blanket"
   - "The cat booped the blanket on the dog"
 
-Semantic role assignment by word forms (agglutinated suffixes):
+Semantic role assignment by word forms (semantic suffixes):
   - "고양이**는** 마당**에서** 강아지**를** 쫓았다"
   - "마당**에서** 고양이**는** 쫓았다, 강아지**를**"
 
 Both Korean sentences mean "the cat chased the dog in the yard",
 because the bolded suffixes, *not* the word orderings, assign the
 semantic relations (this information comes at a cost, a large increase
-in the number of tokens used in the language -- this makes stemmers
-much more critical for such languages).
+in the number of space-delimited tokens in the language -- this makes
+good tokenizers much more critical).
 
 What you get in return is a simplified, compressed representation of
 the text which can still answer one question: "what is this text

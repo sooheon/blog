@@ -12,8 +12,6 @@ development tools yak-shaving, and some armchair philosophy.
 
 - [Github]
 - [Resume]
-- [HN]
 
-[HN]: https://news.ycombinator.com/user?id=sooheon
 [Github]: https://github.com/sooheon
 [Resume]: resume/
